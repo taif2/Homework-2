@@ -3,17 +3,13 @@ title: "Lab 05 - Nobel laureates"
 output: github_document
   
 ---
-Team Name:
+Team Name: G6
 
 Team Members - Name and Student ID
 
-1.
+1. Taif Matar - 2201003265
 
-2.
 
-3.
-
-4.
 
 
 
