@@ -109,7 +109,8 @@ nobel_living_science %>%
 
 
 ```{r}
-
+nobel_living_science %>% filter(born_country_us == "USA") %>%
+  count(born_country_us)
 ```
 
 Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.d*
@@ -124,9 +125,10 @@ Knit, *commit, and push your changes to GitHub with an appropriate commit messag
     
 
 ```{r}
-
+nobel_living_science <- nobel_living_science %>% mutate( born_country_us = if_else(born_country == "USA", "USA", "Other"))
+ nobel_living_science %>%ggplot(aes(x = country_us,y=born_country_us, fill = category)) + geom_bar(stat = "identity", position = "dodge", orientation="horizontal")
 ```
-
+yes, because we at buzzfeed we analyze the data to be able to search for more understanding of the data to get information frome it, so we create a lot of filters to understand the data better and deeper.
 Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 
@@ -135,9 +137,9 @@ Knit, *commit, and push your changes to GitHub with an appropriate commit messag
 
 
 ```{r}
-
+nobel_living_science %>% filter(born_country_us=="Other",country_us=="USA")%>%count(born_country) %>% arrange(desc(n))
 ```
-
+Germany and United Kingdom.
 Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*
 
 
